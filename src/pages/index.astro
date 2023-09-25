@@ -1,7 +1,7 @@
 ---
 import { Image } from 'astro:assets'
 
-import CountUp from '@/components/CountUp'
+import CountUp from '@/components/CountUp.tsx'
 import Layout from '@/components/Layout.astro'
 ---
 
@@ -23,10 +23,8 @@ import Layout from '@/components/Layout.astro'
       </div>
       <div class='p-1 max-w-full'>
         <p class='text-xl font-bold pb-2'>Desde ese día</p>
-        <CountUp client:load />
+        <CountUp client:only='react' />
       </div>
     </section>
   </main>
-
-  <style></style>
 </Layout>

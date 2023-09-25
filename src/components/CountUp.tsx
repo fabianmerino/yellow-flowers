@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react'
 import FlipNumbers from 'react-flip-numbers'
 
+const START_TIME = new Date(2017, 6, 31, 0, 0, 0, 0) // 2017-07-31 00:00:00
 function getDiferenceTime() {
-  const START_TIME = new Date(2017, 6, 31, 0, 0, 0, 0) // 2017-07-31 00:00:00
   const now = new Date()
   const diff = now.getTime() - START_TIME.getTime()
   // Create date with time zone America/Lima
@@ -66,14 +66,14 @@ function CountUp() {
         {time
           .filter((t) => t.type === 'date')
           .map((item, index) => (
-            <Digit key={index} digit={item.digit} unit={item.unit} />
+            <Digit key={`date-${index}`} digit={item.digit} unit={item.unit} />
           ))}
       </div>
       <div className='flex justify-center'>
         {time
           .filter((t) => t.type === 'time')
           .map((item, index) => (
-            <Digit key={index} digit={item.digit} unit={item.unit} />
+            <Digit key={`time-${index}`} digit={item.digit} unit={item.unit} />
           ))}
       </div>
     </div>
